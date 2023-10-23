@@ -38,7 +38,7 @@ def load_arguments(arg_path):
         elif len(arg_bytes) == 8:
             return np.frombuffer(arg_bytes, dtype=np.uint64)[0], None
         else:
-            raise Exception('Incorrect size of {}: {}'.format(arg_path, len(arg_bytes)))
+            raise Exception(f'Incorrect size of {arg_path}: {len(arg_bytes)}')
     else:
         buff = np.frombuffer(bytearray(arg_bytes), dtype=np.uint8)
         buff.setflags(write=1, align=1)
